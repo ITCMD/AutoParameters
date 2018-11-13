@@ -21,6 +21,7 @@ shift
 goto Functionloop
 :EndFunction
 
+::The Rest of your code::
 echo %F1% is the first Parameter
 pause exit /b
 ```
@@ -30,6 +31,7 @@ This will not:
 @echo off
 call :ParamReader
 
+::The Rest of your code::
 echo %F1% is the first Parameter
 pause
 exit /b
