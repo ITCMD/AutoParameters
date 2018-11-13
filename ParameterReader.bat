@@ -1,4 +1,4 @@
-:ParameterFunction
+::ITCMD Parameter Reader
 set ParamCount=0
 :FunctionLoop
 if "%~1"=="" goto EndFunction
