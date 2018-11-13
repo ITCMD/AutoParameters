@@ -1,11 +1,15 @@
 # AutoParameters
 A common difficulty with parameters is that you can only have up to 9 parameters without using the shift command (which replaces the initial ones).
 
-This function replaces `%1` and `%~1` variables with %F1% and %F1Q% variables. This allows you to handle an infinite amount of parameters. For example, the 20th paramater would be `%F20%`. The script also allows you to easily check how many paramaters there are with the `%ParamCount%` variable.
+This function replaces `%1` and `%~1` variables with `%F1%` and `%F1Q%` variables. This allows you to handle an infinite amount of parameters. For example, the 20th paramater would be `%F20%`. The script also allows you to easily check how many paramaters there are with the `%ParamCount%` variable.
 
 # How to use
 
 The simple 10 lines of code must be placed at the top of your script (after `@echo off` if you have it). It can also be put inside a function to handle it's parameters, but note that this means you cannot call it from the top of your file.
+
+To get the second parameter: `%F2%`
+To get the second parameter without quotes (if there are any by default): `%F2Q%`
+To get the count of parameters: `%ParamCount%`
 
 This will work:
 ```
@@ -22,7 +26,7 @@ goto Functionloop
 :EndFunction
 
 ::The Rest of your code::
-echo %F1% is the first Parameter
+echo %F1% is the first Parameter of %ParamCount% Parameters. 
 pause exit /b
 ```
 This will not:
@@ -32,7 +36,7 @@ This will not:
 call :ParamReader
 
 ::The Rest of your code::
-echo %F1% is the first Parameter
+echo %F1% is the first Parameter of %ParamCount% Parameters. 
 pause
 exit /b
 
